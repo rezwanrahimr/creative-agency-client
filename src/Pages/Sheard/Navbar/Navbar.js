@@ -12,7 +12,7 @@ const Navbar = () => {
         <li><Link>Login</Link></li>
     </>
     return (
-        <div className="navbar">
+        <div className="navbar mt-5" style={{position:'fixed'}}>
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -22,7 +22,7 @@ const Navbar = () => {
                         {NavItems}
                     </ul>
                 </div>
-                <img src={Logo} alt="" width='40%' />
+                <img className='ml-16' src={Logo} alt="" width='35%' />
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal p-0">
