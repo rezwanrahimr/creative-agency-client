@@ -19,10 +19,10 @@ import work from './work.css';
 
 const Work = () => {
     return (
-        <div className='hello '>
+        <div >
             <Swiper
-                slidesPerView={3}
-                spaceBetween={30}
+                slidesPerView={4}
+                spaceBetween={0}
                 freeMode={true}
                 pagination={{
                     clickable: true,
@@ -30,12 +30,12 @@ const Work = () => {
                 modules={[FreeMode, Pagination]}
                 className="mySwiper"
             >
-                <SwiperSlide className="p-5 mb-24"><img src={imgOne} alt="" /></SwiperSlide>
-                <SwiperSlide className="p-5"><img src={imgTwo} alt="" /></SwiperSlide>
-                <SwiperSlide className="p-5"><img src={imgOne} alt="" /></SwiperSlide>
-                <SwiperSlide className="p-5"><img src={imgTwo} alt="" /></SwiperSlide>
-                <SwiperSlide className="p-5"><img src={imgOne} alt="" /></SwiperSlide>
-                <SwiperSlide className="p-5"><img src={imgTwo} alt="" /></SwiperSlide>
+                <SwiperSlide className="p-5 slider"><img src={imgOne} className=''  alt="" /></SwiperSlide>
+                <SwiperSlide className="p-5 slider"><img src={imgTwo} alt="" /></SwiperSlide>
+                <SwiperSlide className="p-5 slider"><img src={imgOne} alt="" /></SwiperSlide>
+                <SwiperSlide className="p-5 slider"><img src={imgTwo} alt="" /></SwiperSlide>
+                <SwiperSlide className="p-5 slider"><img src={imgOne} alt="" /></SwiperSlide>
+                <SwiperSlide className="p-5 slider"><img src={imgTwo} alt="" /></SwiperSlide>
 
             </Swiper>
         </div>

@@ -1,0 +1,44 @@
+.contact{
+    background-color: #FBD062;
+}
+
+.inputField {
+    width: 530px;
+    height: 70px;
+    left: 716px;
+    top: 3056px;
+    background: #FFFFFF;
+    border-radius: 4px;
+}
+
+.inputArea {
+    width: 530px;
+    height: 277px;
+    left: 716px;
+    top: 3228px;
+
+    align-items:flex-start;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 24px;
+    /* or 136% */
+
+    letter-spacing: 0.396px;
+
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.send {
+    width: 170px;
+    height: 45px;
+    left: 721px;
+    top: 3521px;
+    background: #111430;
+    border-radius: 5px;
+    color: white;
+    text-align: center
+    
+
+}
