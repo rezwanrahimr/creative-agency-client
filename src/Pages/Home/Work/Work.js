@@ -19,7 +19,7 @@ import work from './work.css';
 
 const Work = () => {
     return (
-        <>
+        <div className='hello '>
             <Swiper
                 slidesPerView={3}
                 spaceBetween={30}
@@ -38,7 +38,7 @@ const Work = () => {
                 <SwiperSlide className="p-5"><img src={imgTwo} alt="" /></SwiperSlide>
 
             </Swiper>
-        </>
+        </div>
     );
 };
 
