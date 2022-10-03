@@ -1,13 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import login from './login.css';
-import IMG from '../../images/Fashion blogging-pana.svg';
-import { Button } from 'react-bootstrap';
-import auth from '../../firebase.init';
 import { useSignInWithEmailAndPassword, useSignInWithFacebook, useSignInWithGoogle } from 'react-firebase-hooks/auth';
-import Loading from '../Sheard/Loading';
-import useToken from '../../hooks/UseToken';
 import { toast } from 'react-toastify';
+import auth from '../../firebase.init';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -27,7 +22,7 @@ const Login = () => {
         toast.error(error.message);
     }
     if (loading || Gloading || Floading) {
-        return <Loading></Loading>
+        return;
     }
     if (user || Guser || Fuser) {
         navigate('/Home')
@@ -36,7 +31,7 @@ const Login = () => {
         <div>
         <div className='row'>
             <div className='col-lg-6 col-sm-10 Image d-flex justify-content-center'>
-                <img src={IMG} width="100%" alt="" />
+                {/* <img src={IMG} width="100%" alt="" /> */}
             </div>
             <div className='col-lg-6 col-sm-10'>
                 <div className="forms-container mt-5">
@@ -54,7 +49,7 @@ const Login = () => {
                             {
                                 error || Gerror || Ferror ? <p className='text-danger'>{error.message || Gerror.message || Ferror.message}</p> : ''
                             }
-                            <Button className='px-5' variant="outline-primary" onClick={() => signInWithEmailAndPassword(email, password)}>LOGIN</Button>{' '}
+                            <button className='px-5' variant="outline-primary" onClick={() => signInWithEmailAndPassword(email, password)}>LOGIN</button>{' '}
                             <p className="social-text">Create Account : <Link to={'/SignUp'}>SIGN-UP</Link></p>
                             <div className="social-media">
                                 <a href="#" onClick={() => signInWithFacebook(email, password)} className="social-icon">
