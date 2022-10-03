@@ -1,7 +1,37 @@
-import React from 'react';
 import Signup from './Signup.css'
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useCreateUserWithEmailAndPassword, useSignInWithFacebook, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { toast } from 'react-toastify';
+import auth from '../../../src/firebase.init'
+
 
 const SignUp = () => {
+
+    const navigate = useNavigate();
+
+    // Sign Up with Google.
+    const [signInWithGoogle, Guser, Gloading, Gerror] = useSignInWithGoogle(auth);
+
+    // create user with Email and Password.
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
+    const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth);
+
+    // Sign up with Facebook.
+    const [signInWithFacebook, Fuser, Floading, Ferror] = useSignInWithFacebook(auth);
+   
+
+
+    if (error) {
+        toast.error(error.message);
+    }
+    if (loading || Gloading || Floading) {
+        return 
+    }
+    if (user || Guser || Fuser) {
+        navigate('/Home')
+    }
     return (
         <div>
         <div className='row'>
@@ -28,7 +58,7 @@ const SignUp = () => {
                             {
                                 error || Gerror || Ferror ? <p className='text-danger'>{error.message || Gerror.message || Ferror.message}</p> : ''
                             }
-                            <Button onClick={() => createUserWithEmailAndPassword(email, password)} className='px-5' variant="outline-primary">CREATE</Button>{' '}
+                            <button onClick={() => createUserWithEmailAndPassword(email, password)} className='px-5' variant="outline-primary">CREATE</button>{' '}
                             <p className="social-text">Already Have a Account <Link to={'/Login'}>Login</Link></p>
                             <div className="social-media">
                                 <a href="#" onClick={() => signInWithFacebook(email, password)} className="social-icon">
