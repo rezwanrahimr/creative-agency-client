@@ -10,7 +10,7 @@ const Navbar = () => {
         <li><Link>Our Portfolio</Link></li>
         <li><Link>Our Team</Link></li>
         <li><Link>Contact Us</Link></li>
-        <li><button className='button'>Login</button></li>
+        <li><Link to='/signUp'><button className='button'>Login</button></Link></li>
     </>
     return (
         <div className="navbar pt-5 px-16" style={{backgroundColor:'#ffbc01'}}>
